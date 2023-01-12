@@ -8,8 +8,9 @@ class CardGame:
         self.player1 = player1
         self.player2 = player2
 
-        if num_cards > 26 or num_cards < 10:
+        if num_cards > 26 or num_cards < 10:    #Number of cards each player can't exceed 26 or below 10 cards
             num_cards = 26
+
         self.num_cards = num_cards
         self.new_game(self.num_cards)
 
