@@ -26,7 +26,7 @@ class CardGame:
         for i in range(num_cards):
             self.player2.pack_player.append(self.pack.deal_one())
 
-
+    """ FIX - FIX - FIX - FIX - FIX - FIX - FIX - FIX - FIX - FIX - FIX - FIX - FIX - FIX - FIX - FIX - FIX - FIX - """
     def get_winner(self):
         if self.player1.pack_player > self.player2.pack_player:
             return self.player1
@@ -34,3 +34,6 @@ class CardGame:
             return self.player2
         else:
             return None
+
+
+"""FIX - FIX - FIX - FIX - FIX - FIX - FIX - FIX - FIX - FIX - FIX - FIX - FIX - FIX - FIX - FIX - FIX - FIX - FIX - FIX - FIX - """

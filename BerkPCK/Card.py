@@ -25,9 +25,9 @@ class Card:
         if self.suit == 4:
             suit = "CLUB (4)"
         if 1 < self.value < 11:
-            return f"CARD {self.value}, {suit}"
+            return f"{self.value}, {suit}"
         else:
-            return f"CARD {card}, {suit}"
+            return f"{card}, {suit}"
 
 
     def __gt__(self, other):
