@@ -1,5 +1,5 @@
 # WELCOME TO THE
-# War of Cards 1.0
+# WAR OF CARDS 1.0
 This is simple program of War of Cards
 10 rounds of matches.
 Each round, the program choose random card from the deck each player, higher card wins
