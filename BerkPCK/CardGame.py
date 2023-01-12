@@ -11,7 +11,7 @@ class CardGame:
         if num_cards > 26 or num_cards < 10:
             num_cards = 26
         self.num_cards = num_cards
-        self.new_game(num_cards)
+        self.new_game(self.num_cards)
 
 
     def new_game(self, num_cards):
