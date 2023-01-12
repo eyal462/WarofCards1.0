@@ -25,7 +25,7 @@ if __name__ == '__main__':
         print(f"{player1.name}'s: {card1.__repr__()}")
         print(f"{player2.name}'s: {card2.__repr__()}")
         points1 +=1
-        print(f"PLAYER 1 ({player1.name}) IS THE WINNER (Points: {player1.name} {points1}:{points2} {player2.name})")
+        print(f"PLAYER 1 ({player1.name}) IS THE WINNER (Points: {player1.name} {points1}:{points2} {player2.name})\n")
     if card2.__gt__(card1):
         """PLAYER 2 WIN"""
         print("==============NEW MATCH=====================")
@@ -33,10 +33,10 @@ if __name__ == '__main__':
         print(f"{player1.name}'s: {card1.__repr__()}")
         print(f"{player2.name}'s: {card2.__repr__()}")
         points2 += 1
-        print(f"PLAYER 2 ({player2.name}) IS THE WINNER (Points: {player1.name} {points1}:{points2} {player2.name})")
+        print(f"PLAYER 2 ({player2.name}) IS THE WINNER (Points: {player1.name} {points1}:{points2} {player2.name})\n")
     else:
-        print("============TIE================")
-  print("================END MATCH======================")
+        print("============TIE================\n")
+  print("================END OF GAME ======================")
   if points1 > points2:
       print(f"PLAYER 1 ({player1.name}) IS THE WINNER")
   if points2 > points1:
