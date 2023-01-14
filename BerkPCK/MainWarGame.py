@@ -6,7 +6,7 @@ from Deck_of_Cards import Deck_of_Cards
 if __name__ == '__main__':
   #  """THE MAIN GAME"""
   player1=Player("eyal", 26)
-  player2=Player("lior", 26)
+  player2=Player("ben-mosh", 26)
   points1 = 0
   points2 = 0
   num_cards = int(input("enter number of cards:"))
