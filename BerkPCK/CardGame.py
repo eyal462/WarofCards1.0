@@ -26,14 +26,11 @@ class CardGame:
         for i in range(num_cards):
             self.player2.pack_player.append(self.pack.deal_one())
 
-    """ FIX - FIX - FIX - FIX - FIX - FIX - FIX - FIX - FIX - FIX - FIX - FIX - FIX - FIX - FIX - FIX - FIX - FIX - """
     def get_winner(self):
-        if self.player1.pack_player > self.player2.pack_player:
+        """The winner of the game is the player with most cards"""
+        if self.player1.pack_player> self.player2.pack_player:
             return self.player1
         if self.player2.pack_player > self.player1.pack_player:
             return self.player2
         else:
             return None
-
-
-"""FIX - FIX - FIX - FIX - FIX - FIX - FIX - FIX - FIX - FIX - FIX - FIX - FIX - FIX - FIX - FIX - FIX - FIX - FIX - FIX - FIX - """

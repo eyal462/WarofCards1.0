@@ -10,7 +10,7 @@ if __name__ == '__main__':
   points1 = 0
   points2 = 0
   num_cards = int(input("enter number of cards:"))
-  CardGame(player1 ,player2, num_cards)
+  cg = CardGame(player1 ,player2, num_cards)
   print(f"player 1 {player1.num_of_cards}")
   print(f"player 2 {player2.num_of_cards}")
 
@@ -29,7 +29,7 @@ if __name__ == '__main__':
     if card2.__gt__(card1):
         """PLAYER 2 WIN"""
         print("==============NEW MATCH=====================")
-        player1.add_card(card1)
+        player2.add_card(card1)
         print(f"{player1.name}'s: {card1.__repr__()}")
         print(f"{player2.name}'s: {card2.__repr__()}")
         points2 += 1
@@ -37,9 +37,4 @@ if __name__ == '__main__':
     else:
         print("============TIE================\n")
   print("================END OF GAME ======================")
-  if points1 > points2:
-      print(f"PLAYER 1 ({player1.name}) IS THE WINNER")
-  if points2 > points1:
-      print(f"PLAYER 2 ({player2.name}) IS THE WINNER")
-  elif points1 == points2:
-      print("TIE")
+  print(f"THE WINNER IS {cg.get_winner()}!!")
