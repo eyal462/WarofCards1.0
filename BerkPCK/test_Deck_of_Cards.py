@@ -11,6 +11,7 @@ class TestDeck_of_Cards(TestCase):
     def test_init(self):
         """Test for the initialize of deck of cards
         check if it 52 cards and each card is actually card"""
+        self.assertNotEqual(len(self.deck_of_cards.pack), 0)
         self.assertEqual(len(self.deck_of_cards.pack), 52)
         for i in range(len(self.deck_of_cards.pack)):
             self.assertIsInstance(self.deck_of_cards.pack[i], Card)
