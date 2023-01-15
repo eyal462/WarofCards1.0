@@ -11,7 +11,7 @@ class Player:
 
 
     def __str__(self):
-        return f"{self.name}"
+        return f"{self.name.upper()}"
 
     def set_hand(self, pack):
         """give player random cards, number of cards is set by the user"""

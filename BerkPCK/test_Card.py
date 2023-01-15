@@ -13,10 +13,10 @@ class TestCard(TestCase):
         """Test the __gt__ method"""
         card1 = Card(7, 2)
         card2 = Card(2, 1)
-        card3 = Card(-2, -4)
+        card3 = Card(2, 4)
         self.assertTrue(card1 > card2)
-        self.assertFalse(card2 > card1)
-        self.assertFalse(card3 > card2)
+        self.assertFalse(card2 > card1)  # card 2 is weaker than card 1
+        self.assertTrue(card3 > card2)
 
     def test_eq(self):
         """Test the __eq__ method"""

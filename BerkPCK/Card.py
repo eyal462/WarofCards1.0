@@ -4,31 +4,11 @@ class Card:
         self.suit = suit
 
     def __repr__(self):
-        card = ""
-        suit = ""
-        if self.value == 1 or self.value >= 11:
-            if self.value == 1:
-                card = "ACE (1)"
-            if self.value == 11:
-                card = "JACK (11)"
-            if self.value == 12:
-                card = "QUEEN (12)"
-            if self.value == 13:
-                card = "KING (13)"
-
-        if self.suit == 1:
-            suit = "DIMOND (1)"
-        if self.suit == 2:
-            suit = "SPADE (2)"
-        if self.suit == 3:
-            suit = "HEART (3)"
-        if self.suit == 4:
-            suit = "CLUB (4)"
-        if 1 < self.value < 11:
-            return f"{self.value}, {suit}"
-        else:
-            return f"{card}, {suit}"
-
+        value = {1: "ACE (1)", 11: "JACK (11)", 12: "QUEEN (12)", 13: "KING (13)"}
+        suit = {1: "DIMOND (1)", 2: "SPADE (2)", 3: "HEART (3)", 4: "CLUB (4)"}
+        card = value.get(self.value, self.value)                            # the get method search in the dicticnery keys
+        suit = suit.get(self.suit)                                          # if self.value found in key it returns value
+        return f"{card}, {suit}"                                            # if not, return self.value
 
     def __gt__(self, other):
         """compare the cards, if current card is higher from ther other, it returns True"""

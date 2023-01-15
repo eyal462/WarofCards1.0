@@ -38,5 +38,8 @@ if __name__ == '__main__':
                 f"PLAYER 2 ({CardGame1.player2.name}) IS THE WINNER (Points: {CardGame1.player1.name} {points1}:{points2} {CardGame1.player2.name})\n")
         else:
             print("============TIE================\n")
-    print("================END OF GAME ======================")
-    print(f"THE WINNER IS {CardGame1.get_winner()}!!")
+    print("================END OF GAME ======================\n")
+    if CardGame1.get_winner() == None:
+        print("===========================TIE=============================\n")
+    else:
+        print(f"=================THE WINNER IS {CardGame1.get_winner()}!!======================")

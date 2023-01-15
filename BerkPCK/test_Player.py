@@ -11,7 +11,6 @@ class TestPlayer(TestCase):
 
     def setUp(self):
         self.card = Card(1, 2)
-        self.player = Player("eyal", 26)
         self.cardgame = CardGame("eyal", "lior", 26)
 
     def test__init__(self):
@@ -24,16 +23,16 @@ class TestPlayer(TestCase):
     def test_set_hand(self):
         """test for correct number of cards"""
 
-        for i in range(0, 10):                  # if it's lower than 10,
-            cardgame = CardGame("eyal", "lior", i)         # its become the default (26)
+        for i in range(0, 10):                                              # if it's lower than 10,
+            cardgame = CardGame("eyal", "lior", i)                          # its become the default (26)
             self.assertEqual(len(cardgame.player1.pack_player), 26)
 
-        for i in range (10, 27):                # if it's between 10 - 26 cards,
+        for i in range (10, 27):                                            # if it's between 10 - 26 cards,
             cardgame = CardGame("eyal", "lior", i)
             self.assertEqual(len(cardgame.player1.pack_player), i)
 
-        for i in range(27, 1000):                # if it's above 26,
-            cardgame = CardGame("eyal", "lior", i)          # it's become 26
+        for i in range(27, 1000):                                           # if it's above 26,
+            cardgame = CardGame("eyal", "lior", i)                          # it's become 26
             self.assertEqual(len(cardgame.player1.pack_player), 26)
 
     @patch('random.choice')
