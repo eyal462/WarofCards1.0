@@ -1,17 +1,15 @@
 from unittest import TestCase
-from Player import Player
 from Card import Card
-import Deck_of_Cards
-from Deck_of_Cards import Deck_of_Cards
 from mock import patch
 from CardGame import CardGame
-
-
 class TestPlayer(TestCase):
 
     def setUp(self):
         self.card = Card(1, 2)
         self.cardgame = CardGame("eyal", "lior", 26)
+        self.cardgame2 = CardGame("eyal", "lior", 15)
+        self.cardgame3 = CardGame("eyal", "lior", 0)                        # lower than 10
+        self.cardgame4 = CardGame("eyal", "lior", 40)                       # above 26
 
     def test__init__(self):
         """test the initialize of player"""
@@ -19,6 +17,9 @@ class TestPlayer(TestCase):
         self.assertEqual(len(self.cardgame.player1.pack_player), 26)
         self.assertEqual(self.cardgame.player2.name, "lior")
         self.assertEqual(len(self.cardgame.player2.pack_player), 26)
+        self.assertEqual(len(self.cardgame2.player1.pack_player), 15)
+        self.assertEqual(len(self.cardgame3.player1.pack_player), 26)       # if it's set LOWER than 0, the program set it to 26
+        self.assertEqual(len(self.cardgame4.player1.pack_player), 26)       # if it's set HIGHER than 26, the program set it to 26
 
     def test_set_hand(self):
         """test for correct number of cards"""
@@ -39,10 +40,10 @@ class TestPlayer(TestCase):
     def test_get_card(self, mock_random_choice):
         """Test get_card, check if its return a random number from
         players pack and if it's update the number of cards the player had"""
-        card = Card(10, 2)                                  # card to mock
-        self.cardgame.player1.pack_player.append(card)      # player now have 27 cards
-        mock_random_choice.return_value = Card(10, 2)       # mcoking the card
-        card1 = self.cardgame.player1.get_card()             # should now remove 1 card from players pack
+        card = Card(10, 2)                                                  # card to mock
+        self.cardgame.player1.pack_player.append(card)                      # player now have 27 cards
+        mock_random_choice.return_value = Card(10, 2)                       # mocking the card
+        card1 = self.cardgame.player1.get_card()                            # should now remove 1 card from players pack
         self.assertEqual(card1.value, 10)
         self.assertEqual(card1.suit, 2)
         self.assertEqual(len(self.cardgame.player1.pack_player), 26)
@@ -52,4 +53,5 @@ class TestPlayer(TestCase):
             for j in range(1, 5):
                 card = Card(i, j)
                 self.cardgame.player1.pack_player.append(card)
-                self.assertEqual(self.cardgame.player1.pack_player[-1], card)
+                self.assertEqual(self.cardgame.player1.pack_player[-1], card) # check if each card we added
+                                                                              # is the right card

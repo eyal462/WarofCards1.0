@@ -1,13 +1,8 @@
-from unittest.mock import mock_open
 from Card import Card
-import unittest
 from unittest import TestCase
-import mock
-from mock import patch
 
 
 class TestCard(TestCase):
-
 
     def test_gt(self):
         """Test the __gt__ method"""
@@ -23,5 +18,6 @@ class TestCard(TestCase):
         card1 = Card(1, 1)
         card2 = Card(1, 1)
         card3 = Card(2, 1)
-        self.assertTrue(card1 == card2)
-        self.assertFalse(card1 == card3)
+        self.assertTrue(card1 == card2)  # card1 == card 2
+        self.assertFalse(card1 == card3)  # card 1 != card3
+        self.assertFalse(card3 == card2)

@@ -14,11 +14,8 @@ class CardGame:
             raise TypeError("number of cards can't be string")
         self.player1 = Player(player1, num_cards)
         self.player2 = Player(player2, num_cards)
-        self.cards_shuffled = False
-
-        if num_cards > 26 or num_cards < 10:    #Number of cards each player can't exceed 26 or below 10 cards
-            num_cards = 26
-
+        if num_cards > 26 or num_cards < 10:                                            # Number of cards each player
+            num_cards = 26                                                              # can't exceed 26 or below 10 cards
         self.num_cards = num_cards
         self.new_game(self.num_cards)
 
@@ -26,14 +23,10 @@ class CardGame:
     def new_game(self, num_cards):
         """create a new game"""
         if len(self.player1.pack_player) == 0 and len(self.player2.pack_player) == 0:   # number of cards cant be 0
-            if not self.cards_shuffled:
-                self.pack.cards_shuffle()
-                self.cards_shuffled = True
-            # self.player1.num_of_cards = num_cards
-            # self.player2.num_of_cards = num_cards
+            self.pack.cards_shuffle()
             for i in range(num_cards):
-                self.player1.pack_player.append(self.pack.deal_one())       # give players random cards,
-            for i in range(num_cards):                                      # number of cards is set by the user
+                self.player1.pack_player.append(self.pack.deal_one())                   # give players random cards,
+            for i in range(num_cards):                                                  # number of cards is set by the user
                 self.player2.pack_player.append(self.pack.deal_one())
         else:
             print("error massage")

@@ -6,7 +6,7 @@ class TestDeck_of_Cards(TestCase):
 
     def setUp(self):
         self.deck_of_cards = Deck_of_Cards()
-        self.list1 = Deck_of_Cards()            # original order of cards
+        self.list1 = Deck_of_Cards()                                # original order of cards
 
     def test_init(self):
         """Test for the initialize of deck of cards

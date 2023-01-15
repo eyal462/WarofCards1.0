@@ -23,9 +23,7 @@ class Player:
         """returns random card form player's pack of cards"""
         card = random.choice(self.pack_player)
         self.pack_player.remove(card)
-        self.num_of_cards = len(self.pack_player)
         return card
 
     def add_card(self, card):
         self.pack_player.append(card)
-        self.num_of_cards = len(self.pack_player)

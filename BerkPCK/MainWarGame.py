@@ -1,7 +1,4 @@
-from Card import Card
-from Player import Player
 from CardGame import CardGame
-from Deck_of_Cards import Deck_of_Cards
 
 if __name__ == '__main__':
     """THE MAIN GAME"""

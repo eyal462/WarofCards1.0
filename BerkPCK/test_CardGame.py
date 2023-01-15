@@ -1,11 +1,8 @@
-import random
 from unittest import TestCase
-from Player import Player
 from CardGame import CardGame
-import mock
 from Card import Card
-from Deck_of_Cards import Deck_of_Cards
-from mock import patch
+import mock
+
 
 
 class TestCardGame(TestCase):
@@ -17,11 +14,14 @@ class TestCardGame(TestCase):
         """test for new game, test its gives a total of number of cards set by the user"""
         with mock.patch('Deck_of_Cards.Deck_of_Cards.cards_shuffle') as mock_cards_shuffle, \
                 mock.patch('Deck_of_Cards.Deck_of_Cards.deal_one') as mock_deal_one:
-            cardgame = CardGame("eyal", "lior", 26)
-            cardgame.player1.pack_player = []
-            cardgame.player2.pack_player = []
-            self.assertEqual(mock_cards_shuffle.call_count, 1)      # check if its only suffle once
+            cardgame1 = CardGame("eyal", "lior", 26)
+            self.assertEqual(mock_cards_shuffle.call_count, 1)      # check if its only shuffle once
             self.assertEqual(mock_deal_one.call_count, 52)          # check if its give 52 cards
+            mock_card = Card(7, 2)
+            mock_deal_one.return_value = mock_card                  # using mock to get card from deal_one
+            cardgame2 = CardGame("eyal", "lior", 26)
+            card = cardgame2.player1.get_card()                     # card = mock_card = (7, 2)
+            self.assertEqual(card, mock_card)
 
 
 
@@ -47,8 +47,8 @@ class TestCardGame(TestCase):
         self.assertEqual(cardgame.get_winner(), cardgame.player1)   # player 2 has 3 ==> player 1 wins
 
         """test for player 2 wins"""
-        cardgame.player1.pack_player.remove(card4)             # player 1 has 3
-        cardgame.player1.pack_player.remove(card3)             # player 2 has 2 ==> player 2 wins
+        cardgame.player1.pack_player.remove(card4)                  # player 1 has 3
+        cardgame.player1.pack_player.remove(card3)                  # player 2 has 2 ==> player 2 wins
         self.assertEqual(cardgame.get_winner(), cardgame.player2)
 
         """test for empty cards"""
