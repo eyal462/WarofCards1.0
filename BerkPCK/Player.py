@@ -10,12 +10,12 @@ class Player:
         self.num_of_cards = num_of_cards
 
     def __str__(self):
-        return f"{self.name} {self.num_of_cards}"
+        return f"{self.name}"
 
     def set_hand(self, pack):
         """give player random cards, number of cards is set by the user"""
         for i in range(self.num_of_cards):
-            self.pack_player[i] = pack.deal_one()
+            self.pack_player.append(pack.deal_one())
 
     def get_card(self):
         """returns random card form player's pack of cards"""

@@ -29,7 +29,7 @@ class TestPlayer(TestCase):
             self.assertEqual(player.num_of_cards, i)
 
         for i in range(27, 100):                # if it's above 26,
-            player = Player("Eyal", i)
+            player = Player("Eyal", i)          # it's become 26
             self.assertEqual(player.num_of_cards, 26)
 
     @patch('random.choice')
