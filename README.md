@@ -1,5 +1,5 @@
 # WELCOME TO THE
-# WAR OF CARDS 1.0
+# WAR OF CARDS 1.0™
 This is simple program of War of Cards.
 10 rounds of matches.
 Each round, the program choose random card from the deck each player, higher card wins.
@@ -9,3 +9,7 @@ The only user interaction is choosing the number of cards each player get (10 - 
 # GOOD LUCK!
 # MAY THE BEST WIN!
 (there is no actual winner)
+
+
+
+> © 2022 BerkoBros, Inc. BERKOBROS, WAR OF CARDS AND WAR OF CARDS 1.0 are trademarks of BerkoBros, Inc. All other trademarks and trade names are the properties of their respective owners. This product contains software technology licensed from LIOR Software ('LIOR Technology'). LIOR Technology © 1999-2022 LIOR Software, Inc.
