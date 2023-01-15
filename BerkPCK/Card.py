@@ -12,7 +12,7 @@ class Card:
 
     def __gt__(self, other):
         """compare the cards, if current card is higher from ther other, it returns True"""
-        if self.value == 1 and other.value != 1:   # ACE is the highest card
+        if self.value == 1 and other.value != 1:                            # ACE is the highest card
             return True
         if self.value != 1 and other.value == 1:
             return False
