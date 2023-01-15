@@ -20,4 +20,3 @@ class Deck_of_Cards:
         card = random.choice(self.pack)
         self.pack.remove(card)
         return card
-
