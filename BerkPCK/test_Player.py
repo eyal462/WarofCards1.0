@@ -14,6 +14,7 @@ class TestPlayer(TestCase):
         self.pack = Deck_of_Cards
 
     def test__init__(self):
+        """test the initialize of player"""
         self.assertEqual(self.player.name, "eyal")
         self.assertEqual(self.player.num_of_cards, 26)
 
