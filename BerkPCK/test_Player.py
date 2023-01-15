@@ -42,11 +42,12 @@ class TestPlayer(TestCase):
         players pack and if it's update the number of cards the player had"""
         card = Card(10, 2)                                                  # card to mock
         self.cardgame.player1.pack_player.append(card)                      # player now have 27 cards
+        self.assertEqual(len(self.cardgame.player1.pack_player), 27)
         mock_random_choice.return_value = Card(10, 2)                       # mocking the card
         card1 = self.cardgame.player1.get_card()                            # should now remove 1 card from players pack
         self.assertEqual(card1.value, 10)
         self.assertEqual(card1.suit, 2)
-        self.assertEqual(len(self.cardgame.player1.pack_player), 26)
+        self.assertEqual(len(self.cardgame.player1.pack_player), 26)        # the player should have 26 cards
     def test_add_card(self):
         """test that any card can be in player's pack"""
         for i in range(1, 14):
