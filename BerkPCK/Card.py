@@ -6,7 +6,7 @@ class Card:
     def __repr__(self):
         value = {1: "ACE (1)", 11: "JACK (11)", 12: "QUEEN (12)", 13: "KING (13)"}
         suit = {1: "DIMOND (1)", 2: "SPADE (2)", 3: "HEART (3)", 4: "CLUB (4)"}
-        card = value.get(self.value, self.value)                            # the get method search in the dicticnery keys
+        card = value.get(self.value, self.value)                            # the get method search in the dictionary keys
         suit = suit.get(self.suit)                                          # if self.value found in key it returns value
         return f"{card}, {suit}"                                            # if not, return self.value
 

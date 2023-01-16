@@ -3,7 +3,8 @@ import random
 
 class Deck_of_Cards:
     def __init__(self):
-        """initialize the deck of cards, create a list of 52 diffrent cards (13 cards, 4 suits each card)"""
+        """initialize the deck of cards, create a list of 52 different cards
+        (13 cards, 4 suits each card)"""
         self.pack = []
         for i in range(1, 14):
             for j in range(1, 5):
