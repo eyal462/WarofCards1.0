@@ -18,15 +18,15 @@ class Card:
             return False
         if self.value > other.value:
             return True
-        if self.value == other.value and self.suit > other.suit:
-            return True
+        if self.value == other.value and self.suit > other.suit:            # if values are equal, the card with higher
+            return True                                                     # suit wins
         else:
             return False
 
 
     def __eq__(self, other):
-        """compare the card agaist another, if its the same one it returns True"""
-        if self.value == other.value and self.suit == other.suit:
+        """compare the card ageist another, if its the same one it returns True"""
+        if self.value == other.value and self.suit == other.suit:           # check if value and suit are equal
             return True
         else:
             return False
