@@ -52,3 +52,4 @@ class TestCardGame(TestCase):
         cardgame.player1.pack_player = []
         cardgame.player2.pack_player = []
         self.assertEqual(cardgame.get_winner(), None)
+

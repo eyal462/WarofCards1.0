@@ -27,3 +27,4 @@ class TestDeckOfCards(TestCase):
         self.deck_of_cards.cards_shuffle()
         self.assertFalse(
             self.deck_of_cards.pack == self.list1)  # self.list1 = original order of cards (1,1 , 1,2 , 1,3...)
+

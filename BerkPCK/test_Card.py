@@ -21,3 +21,4 @@ class TestCard(TestCase):
         self.assertTrue(card1 == card2)         # card1 == card 2
         self.assertFalse(card1 == card3)        # card 1 != card3
         self.assertFalse(card3 == card2)
+
